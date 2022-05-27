@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <style>
+        .abc{
+            border: 2px solid black;
+            width:270px;
+            height: 300px;
+            padding: 5px;
+            padding-left: 40px;
+            margin-left: 500px;
+            margin-top: 70px;
+        }
+        h1{
+            padding-left:440px;
+            padding-top:40px;
+            color:black;
+            font-family: "Audiowide";
+        }
+        body {
+       background-image: url('blur.jpg');
+       background-repeat: no-repeat;
+       background-attachment: fixed;
+       background-size: cover;
+       font-family: "Audiowide";
+background-position: center;
+     }
+    </style>
+</head>
+<body>
+    <form action="login.php" method="post" name="myform" onsubmit="return validation()">
+    <h1>WELCOME TO LOGIN</h1>
+        <div class="abc">
+    <h4 style="padding-left: 50px;">LOGIN</h4>
+    <label>USERNAME</label>
+    <input type="username" name="username">
+    <span id="alert" style="color: blue;"></span>
+
+    <br><br>
+
+    <label>PASSWORD</label>
+    <input type="password" name="password">
+    <span id="alert1" style="color: blue;"></span>
+    <br><br>
+    
+    
+
+    <button type="submit" style="margin-left: 50px;color: aliceblue;background-color:dodgerblue;">Submit</button>
+
+    </div>
+</form>
+<script>
+    function validation()
+         {
+              var flag=true;
+              if (document.myform.username.value==""){
+              document.getElementById('alert').innerHTML="Please Enter Username";
+              myform.username.style.border="solid 1px red";
+              myform.username.focus();
+              flag=false;
+          }else{
+               document.getElementById('alert').innerHTML="";
+               myform.username.style.border="solid 1px green";
+               flag=true;
+          } if (document.myform.password.value==""){
+              document.getElementById('alert1').innerHTML="Please Enter Password";
+              myform.password.style.border="solid 1px red";
+              myform.password.focus();
+              flag=false;
+          }else{
+               document.getElementById('alert').innerHTML="";
+               myform.password.style.border="solid 1px green";
+               flag=true;
+          }
+          if(flag==false){
+               return false;
+          }else{
+               return true;
+          }
+         }
+</script>
+</body>
+</html>
